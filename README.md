@@ -1,6 +1,6 @@
 # CLIMP: Contrastive Language-Image Mamba Pretraining
 
-Evaluation code for the [CLIMP paper](https://arxiv.org/abs/2601.06891) on the NoCaps image-text retrieval benchmark.
+Evaluation code for the [CLIMP paper](https://arxiv.org/abs/2601.06891) (ECCV 2026) on the NoCaps image-text retrieval benchmark.
 
 CLIMP pairs a VMamba-Base vision encoder with Mamba-based text encoders, trained with bidirectional contrastive loss on CC12M.
 
@@ -53,14 +53,6 @@ python eval_nocaps.py --model mamba1 --checkpoint /path/to/model.safetensors
 |-------|-----------|-----------|------------|----------|----------|-----------|
 | CLIMP-Mamba1 | 38.2 | 70.5 | 81.8 | 51.8 | 81.9 | 90.9 |
 | CLIMP-Mamba2 | 37.4 | 70.2 | 81.6 | 51.0 | 81.3 | 90.9 |
-
-## Architecture
-
-CLIMP uses:
-- **Vision**: VMamba-Base (SSM-based vision encoder with 2D selective scan)
-- **Text**: Mamba-1.4B or Mamba2-1.3B (SSM-based causal language model, backbone only)
-- **Projection**: Linear layers mapping both modalities to a shared 768-dim space
-- **Training objective**: Symmetric contrastive loss (InfoNCE) with learned temperature
 
 Text pooling extracts the embedding at the last non-padding token position.
 
