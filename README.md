@@ -2,8 +2,6 @@
 
 Evaluation code for the [CLIMP](https://arxiv.org/abs/2601.06891) (ECCV 2026) on the NoCaps image-text retrieval benchmark.
 
-CLIMP pairs a VMamba-Base vision encoder with Mamba-based text encoders, trained with bidirectional contrastive loss on CC12M.
-
 ## Models
 
 Pretrained weights are available on HuggingFace:
